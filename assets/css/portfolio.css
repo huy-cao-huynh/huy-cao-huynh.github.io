@@ -487,10 +487,15 @@ body {
   margin: 0 auto;
 }
 
+/* Make Projects feel wider / more prominent */
+.snap-projects .snap-inner {
+  max-width: 1280px;
+}
+
 /* Reveal animations */
 .reveal {
   opacity: 0;
-  transform: translateY(18px) scale(0.99);
+  transform: translateY(-18px) scale(0.99);
   filter: blur(10px);
   transition:
     opacity 700ms cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -521,13 +526,13 @@ body {
 
 .bio-photo-frame {
   position: absolute;
-  inset: -12px -12px -12px -12px;
-  border-radius: 28px;
+  inset: -10px -10px -10px -10px;
+  border-radius: 999px;
   background:
     radial-gradient(500px 300px at 20% 10%, rgba(124, 58, 237, 0.25), transparent 55%),
     radial-gradient(400px 260px at 90% 20%, rgba(34, 211, 238, 0.18), transparent 60%),
     linear-gradient(180deg, rgba(15, 23, 42, 0.55), rgba(7, 11, 24, 0.35));
-  border: 1px solid rgba(148, 163, 184, 0.18);
+  border: 0.75px solid rgba(148, 163, 184, 0.18);
   box-shadow: var(--shadow);
 }
 
@@ -538,8 +543,8 @@ body {
   height: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
-  border-radius: 24px;
-  border: 1px solid rgba(124, 58, 237, 0.25);
+  border-radius: 999px;
+  border: 0.75px solid rgba(124, 58, 237, 0.25);
 }
 
 .bio-content {
@@ -571,6 +576,7 @@ body {
   margin: 0 0 8px;
   font-size: 18px;
   letter-spacing: -0.2px;
+  color: var(--accent3);
 }
 
 .bio-p {
@@ -588,6 +594,7 @@ body {
   margin: 0 0 10px;
   font-size: 28px;
   letter-spacing: -0.4px;
+  color: var(--accent2);
 }
 
 .section-sub {
@@ -612,6 +619,45 @@ body {
     transform 180ms ease,
     border-color 180ms ease,
     background 180ms ease;
+}
+
+/* Projects: bigger cards + more readable copy */
+.snap-projects .projects-grid {
+  gap: 18px;
+}
+
+.snap-projects .project-card {
+  padding: 22px;
+  border-radius: 22px;
+}
+
+.snap-projects .project-card h3 {
+  font-size: 18px;
+}
+
+.snap-projects .project-card p {
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.project-sub {
+  margin: 10px 0 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--muted2);
+}
+
+/* Highlight helper spans for accent colors */
+.hl-accent {
+  color: var(--accent);
+}
+
+.hl-accent2 {
+  color: var(--accent2);
+}
+
+.hl-accent3 {
+  color: var(--accent3);
 }
 
 .project-card:hover {

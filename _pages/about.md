@@ -78,6 +78,10 @@ layout: portfolio
       >
         <h3>LoRA-TTS</h3>
         <p>Text-to-speech pipeline fine-tuned for Taiwanese-Mandarin accents.</p>
+        <p class="project-sub">
+          Built around <span class="hl-accent2">LoRA</span> for efficient dialect adaptation, focusing on quality while reducing
+          compute vs full fine-tuning.
+        </p>
       </a>
 
       <a
@@ -89,6 +93,10 @@ layout: portfolio
       >
         <h3>UltraZoom</h3>
         <p>Multidiffusion transformer models for super-resolution text-to-image tasks.</p>
+        <p class="project-sub">
+          Focused on <span class="hl-accent2">super-resolution</span> generation—turning low-res images into higher-fidelity
+          outputs using multidiffusion transformers.
+        </p>
       </a>
 
       <a
@@ -103,6 +111,10 @@ layout: portfolio
           Deep learning pipeline for cancer detection in histopathology images, with Grad-CAM++ and saliency
           mapping for interpretability.
         </p>
+        <p class="project-sub">
+          Emphasizes model interpretability via <span class="hl-accent2">Grad-CAM++</span> and saliency maps, alongside
+          classification performance.
+        </p>
       </a>
 
       <a
@@ -114,6 +126,10 @@ layout: portfolio
       >
         <h3>Java Chess Engine</h3>
         <p>Mini-Max + Alpha-Beta pruning chess engine for move selection.</p>
+        <p class="project-sub">
+          Implements classic search with <span class="hl-accent2">Alpha-Beta</span> pruning to efficiently evaluate board states
+          and select strong moves.
+        </p>
       </a>
     </div>
   </div>
