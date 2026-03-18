@@ -26,6 +26,26 @@ layout: portfolio
           research to real-world impact.
         </p>
 
+        <div class="bio-links" aria-label="Social links">
+          <a
+            class="bio-link"
+            href="https://github.com/{{ site.author.github }}"
+            target="_blank"
+            rel="noopener"
+          >
+            GitHub
+          </a>
+          <a
+            class="bio-link"
+            href="https://www.linkedin.com/in/{{ site.author.linkedin }}/"
+            target="_blank"
+            rel="noopener"
+          >
+            LinkedIn
+          </a>
+          <a class="bio-link" href="mailto:{{ site.author.email }}">Email</a>
+        </div>
+
         <div class="bio-block">
           <h2 class="bio-h2">Research</h2>
           <p class="bio-p muted2">
