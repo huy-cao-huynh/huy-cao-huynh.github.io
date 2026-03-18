@@ -18,29 +18,81 @@
   </head>
 
   <body>
-    <header class="site-header">
-      <div class="header-inner">
-        <a class="brand" href="#top" aria-label="Back to top">
+    <header class="topbar" aria-label="Section navigation">
+      <div class="topbar-inner">
+        <div class="brand" aria-label="Site title">
           <span class="brand-mark" aria-hidden="true"></span>
           <span class="brand-name">{{ site.author.name | default: site.name }}</span>
-        </a>
+        </div>
 
-        <nav class="tabs" aria-label="Profile sections">
-          <a class="tab" href="#projects">Projects</a>
-          <a class="tab" href="#biography">Biography</a>
-          <a class="tab" href="#resume">Resume</a>
+        <nav class="topnav" aria-label="Quick scroll">
+          <a class="topnav-link" href="#biography" data-nav="biography" aria-current="true">Bio</a>
+          <a class="topnav-link" href="#projects" data-nav="projects">Projects</a>
+          <a class="topnav-link" href="#resume" data-nav="resume">Resume</a>
         </nav>
       </div>
+
+      <div class="topnav-indicator" aria-hidden="true"></div>
     </header>
 
-    <main class="page-main">{{ content }}</main>
+    <main class="snap-root">{{ content }}</main>
 
-    <footer class="site-footer">
-      <div class="footer-inner">
-        <span class="muted">Built with Jekyll •</span>
-        <span class="muted">© {{ site.time | date: '%Y' }} {{ site.author.name | default: site.name }}</span>
-      </div>
-    </footer>
+    <script>
+      (function () {
+        const root = document.querySelector(".snap-root");
+        const navLinks = Array.from(document.querySelectorAll("[data-nav]"));
+        const sections = Array.from(document.querySelectorAll("[data-section]"));
+
+        if (!root || navLinks.length === 0 || sections.length === 0) return;
+
+        const indicator = document.querySelector(".topnav-indicator");
+        const header = document.querySelector(".topbar");
+
+        const setActive = (id) => {
+          navLinks.forEach((a) => {
+            const isActive = a.dataset.nav === id;
+            a.setAttribute("aria-current", isActive ? "true" : "false");
+            a.toggleAttribute("data-active", isActive);
+          });
+
+          sections.forEach((s) => {
+            const isActive = s.getAttribute("data-section") === id;
+            s.classList.toggle("is-active", isActive);
+          });
+
+          if (indicator) {
+            const active = navLinks.find((a) => a.dataset.nav === id);
+            const rect = active ? active.getBoundingClientRect() : null;
+            const headerRect = header.getBoundingClientRect();
+            if (rect) {
+              indicator.style.width = rect.width + "px";
+              indicator.style.transform =
+                "translateX(" + (rect.left - headerRect.left) + "px)";
+            }
+          }
+        };
+
+        // Initial indicator placement: set to Bio.
+        setActive("biography");
+
+        const io = new IntersectionObserver(
+          (entries) => {
+            // Pick the section with the highest intersection ratio.
+            let best = null;
+            for (const e of entries) {
+              if (!e.isIntersecting) continue;
+              const id = e.target.getAttribute("data-section");
+              const ratio = e.intersectionRatio;
+              if (!best || ratio > best.ratio) best = { id, ratio };
+            }
+            if (best) setActive(best.id);
+          },
+          { root: null, threshold: [0.35, 0.55, 0.75] }
+        );
+
+        sections.forEach((s) => io.observe(s));
+      })();
+    </script>
   </body>
 </html>
 

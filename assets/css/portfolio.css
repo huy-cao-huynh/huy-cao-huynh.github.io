@@ -351,3 +351,321 @@ a:hover {
   }
 }
 
+/* ------------------------------
+   Fixup variables + modern layout
+   ------------------------------ */
+:root {
+  --bg0: #05060a;
+  --bg1: #070b18;
+  --card: rgba(15, 23, 42, 0.72);
+  --card2: rgba(7, 11, 24, 0.72);
+  --border: rgba(148, 163, 184, 0.18);
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --muted2: #94a3b8;
+  --header-h: 72px;
+
+  --accent: #7c3aed;
+  --accent2: #22d3ee;
+  --accent3: #6366f1;
+
+  --shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
+  --radius: 18px;
+  --radius2: 26px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: var(--header-h);
+  overflow-y: auto;
+}
+
+.snap-root {
+  padding-top: var(--header-h);
+}
+
+/* Taskbar (top nav) */
+.topbar {
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--header-h);
+  z-index: 100;
+  backdrop-filter: blur(12px);
+  background: rgba(5, 6, 10, 0.62);
+  border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+}
+
+.topbar-inner {
+  height: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.topnav {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.topnav-link {
+  position: relative;
+  z-index: 1;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  color: rgba(148, 163, 184, 0.95);
+  text-decoration: none;
+  font-weight: 650;
+  letter-spacing: 0.1px;
+  transition:
+    background 180ms ease,
+    border-color 180ms ease,
+    color 180ms ease,
+    transform 180ms ease;
+}
+
+.topnav-link:hover {
+  transform: translateY(-1px);
+  border-color: rgba(34, 211, 238, 0.35);
+  background: rgba(124, 58, 237, 0.12);
+  color: var(--text);
+}
+
+.topnav-link[data-active="true"] {
+  border-color: rgba(124, 58, 237, 0.45);
+  color: var(--text);
+  background: rgba(124, 58, 237, 0.14);
+}
+
+.topnav-indicator {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 36px;
+  width: 80px;
+  border-radius: 999px;
+  transform: translateX(0) translateY(-50%);
+  background: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(34, 211, 238, 0.12));
+  border: 1px solid rgba(124, 58, 237, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    width 240ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Scroll snap sections */
+.snap-section {
+  min-height: calc(100vh - var(--header-h));
+  scroll-snap-align: start;
+  scroll-margin-top: calc(var(--header-h) + 12px);
+  display: flex;
+  align-items: center;
+  padding: 46px 18px 56px;
+}
+
+.snap-inner {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* Reveal animations */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px) scale(0.99);
+  filter: blur(10px);
+  transition:
+    opacity 700ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    transform 800ms cubic-bezier(0.2, 0.8, 0.2, 1),
+    filter 900ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+
+.snap-section.is-active .reveal {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  filter: blur(0);
+}
+
+/* Biography layout */
+.biography-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  align-items: center;
+}
+
+.bio-photo {
+  position: relative;
+  width: min(380px, 90vw);
+  margin: 0 auto;
+}
+
+.bio-photo-frame {
+  position: absolute;
+  inset: -12px -12px -12px -12px;
+  border-radius: 28px;
+  background:
+    radial-gradient(500px 300px at 20% 10%, rgba(124, 58, 237, 0.25), transparent 55%),
+    radial-gradient(400px 260px at 90% 20%, rgba(34, 211, 238, 0.18), transparent 60%),
+    linear-gradient(180deg, rgba(15, 23, 42, 0.55), rgba(7, 11, 24, 0.35));
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  box-shadow: var(--shadow);
+}
+
+.bio-photo-img {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 24px;
+  border: 1px solid rgba(124, 58, 237, 0.25);
+}
+
+.bio-content {
+  max-width: 640px;
+}
+
+.bio-name {
+  margin: 0 0 10px;
+  font-size: clamp(36px, 5.2vw, 52px);
+  line-height: 1.03;
+  letter-spacing: -0.9px;
+}
+
+.bio-lead {
+  margin: 0 0 18px;
+  line-height: 1.65;
+  font-size: 15px;
+}
+
+.muted2 {
+  color: var(--muted2);
+}
+
+.bio-block + .bio-block {
+  margin-top: 16px;
+}
+
+.bio-h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+  letter-spacing: -0.2px;
+}
+
+.bio-p {
+  margin: 0 0 10px;
+  line-height: 1.75;
+  font-size: 15px;
+}
+
+/* Projects section */
+.section-head {
+  margin-bottom: 18px;
+}
+
+.section-title {
+  margin: 0 0 10px;
+  font-size: 28px;
+  letter-spacing: -0.4px;
+}
+
+.section-sub {
+  margin: 0;
+  line-height: 1.65;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+}
+
+.project-card {
+  text-decoration: none;
+  display: block;
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.52), rgba(2, 6, 23, 0.15));
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease;
+}
+
+.project-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(124, 58, 237, 0.42);
+  background: linear-gradient(180deg, rgba(124, 58, 237, 0.16), rgba(34, 211, 238, 0.06));
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.project-card p {
+  margin: 8px 0 0;
+  color: var(--muted2);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* Resume section */
+.resume-wrap {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: rgba(2, 6, 23, 0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.resume-frame {
+  width: 100%;
+  height: min(62vh, 620px);
+  border: 0;
+  display: block;
+  background: #fff;
+}
+
+.resume-actions {
+  margin-top: 14px;
+}
+
+@media (min-width: 860px) {
+  .biography-grid {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: 30px;
+  }
+
+  .bio-photo {
+    margin: 0;
+    width: min(420px, 100%);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+

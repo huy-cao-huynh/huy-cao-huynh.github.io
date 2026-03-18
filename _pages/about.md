@@ -7,65 +7,71 @@ redirect_from:
 layout: portfolio
 ---
 
-<div id="top" class="hero">
-  <div class="hero-inner">
-    <div class="hero-card">
-      <div class="profile">
-        <div class="avatar">
-          <img src="/images/DSC02971%20(1).jpg" alt="Profile photo of Huy Huynh" />
-        </div>
-        <div>
-          <h1 class="name">{{ site.author.name | default: site.name }}</h1>
-          <p class="lead">
-            Undergraduate CS student at the University of Washington. I build applied ML systems that connect
-            research to real-world impact.
+<section
+  id="biography"
+  class="snap-section snap-biography"
+  data-section="biography"
+>
+  <div class="snap-inner">
+    <div class="biography-grid">
+      <div class="bio-photo reveal" style="--i: 0;">
+        <div class="bio-photo-frame" aria-hidden="true"></div>
+        <img src="/images/DSC02971%20(1).jpg" alt="Profile photo of Huy Huynh" class="bio-photo-img" />
+      </div>
+
+      <div class="bio-content reveal" style="--i: 1;">
+        <h1 class="bio-name">{{ site.author.name | default: site.name }}</h1>
+        <p class="bio-lead muted2">
+          Undergraduate CS student at the University of Washington. I build applied ML systems that connect
+          research to real-world impact.
+        </p>
+
+        <div class="bio-block">
+          <h2 class="bio-h2">Research</h2>
+          <p class="bio-p muted2">
+            I’m an undergraduate researcher at the
+            <a href="https://grail.cs.washington.edu/" target="_blank" rel="noopener">GRAIL Lab</a>
+            under the mentorship of PhD Jingwei Ma, and advised by Prof. Steve Seitz, Prof. Ira Kemelmacher-Shlizerman,
+            and Prof. Brian Curless. My work focuses on reference-based super-resolution tasks.
           </p>
+          <p class="bio-p muted2">
+            I’m also an undergraduate researcher at the
+            <a href="https://syslab.cs.washington.edu/" target="_blank" rel="noopener">UW Systems Lab</a>
+            under the mentorship of PhD Tapan Chugh, and advised by Arvind Krishnamurthy, working on debugging Web Agent
+            Gateway System (WAGS) failures.
+          </p>
+        </div>
 
-          <div class="chip-row" aria-label="Focus areas">
-            <span class="chip">Machine Learning</span>
-            <span class="chip">Deep Learning</span>
-            <span class="chip">Web Agents</span>
-            <span class="chip">Super-resolution</span>
-          </div>
-
-          <div class="hero-actions">
-            <a
-              class="btn btn-primary"
-              href="https://github.com/{{ site.author.github }}"
-              target="_blank"
-              rel="noopener"
-            >
-              GitHub
-            </a>
-            <a
-              class="btn"
-              href="https://www.linkedin.com/in/{{ site.author.linkedin }}/"
-              target="_blank"
-              rel="noopener"
-            >
-              LinkedIn
-            </a>
-            <a class="btn" href="mailto:{{ site.author.email }}">
-              Email
-            </a>
-            <a class="btn" href="#resume">Resume</a>
-          </div>
+        <div class="bio-block">
+          <h2 class="bio-h2">Personal / what I’m looking for</h2>
+          <p class="bio-p muted2">
+            I’m seeking opportunities to apply my technical skills to impactful work—especially in health, accessibility,
+            and tools that improve everyday life. I’m particularly motivated by projects that bridge research with
+            product.
+          </p>
         </div>
       </div>
     </div>
   </div>
-</div>
+</section>
 
-<section id="projects" class="section">
-  <div class="section-inner">
-    <h2>Projects</h2>
-    <p class="muted">
-      A selection of work spanning ML pipelines, research prototypes, and classic systems projects.
-    </p>
+<section
+  id="projects"
+  class="snap-section snap-projects"
+  data-section="projects"
+>
+  <div class="snap-inner">
+    <div class="section-head reveal" style="--i: 0;">
+      <h2 class="section-title">Projects</h2>
+      <p class="section-sub muted2">
+        A selection of work spanning ML pipelines, research prototypes, and classic systems projects.
+      </p>
+    </div>
 
     <div class="projects-grid">
       <a
-        class="project-card"
+        class="project-card reveal"
+        style="--i: 1;"
         href="https://github.com/huy-cao-huynh/Lora-TTS-Efficient-Dialect-Adaptation"
         target="_blank"
         rel="noopener"
@@ -74,15 +80,20 @@ layout: portfolio
         <p>Text-to-speech pipeline fine-tuned for Taiwanese-Mandarin accents.</p>
       </a>
 
-      <a class="project-card" href="https://ultra-zoom.github.io/" target="_blank" rel="noopener">
+      <a
+        class="project-card reveal"
+        style="--i: 2;"
+        href="https://ultra-zoom.github.io/"
+        target="_blank"
+        rel="noopener"
+      >
         <h3>UltraZoom</h3>
-        <p>
-          Multidiffusion transformer models for super-resolution text-to-image tasks.
-        </p>
+        <p>Multidiffusion transformer models for super-resolution text-to-image tasks.</p>
       </a>
 
       <a
-        class="project-card"
+        class="project-card reveal"
+        style="--i: 3;"
         href="https://github.com/huy-cao-huynh/VisTumor"
         target="_blank"
         rel="noopener"
@@ -94,53 +105,32 @@ layout: portfolio
         </p>
       </a>
 
-      <a class="project-card" href="https://github.com/huy-cao-huynh/MockFish" target="_blank" rel="noopener">
+      <a
+        class="project-card reveal"
+        style="--i: 4;"
+        href="https://github.com/huy-cao-huynh/MockFish"
+        target="_blank"
+        rel="noopener"
+      >
         <h3>Java Chess Engine</h3>
-        <p>
-          Fully functioning Java chess engine using Mini-Max with Alpha-Beta pruning for move selection.
-        </p>
+        <p>Mini-Max + Alpha-Beta pruning chess engine for move selection.</p>
       </a>
     </div>
   </div>
 </section>
 
-<section id="biography" class="section">
-  <div class="section-inner">
-    <h2>Biography</h2>
-
-    <div class="split">
-      <div class="card">
-        <h3>Research</h3>
-        <p class="muted" style="margin: 0;">
-          I’m an undergraduate researcher at the <a href="https://grail.cs.washington.edu/" target="_blank" rel="noopener">GRAIL Lab</a>
-          under the mentorship of PhD Jingwei Ma, and advised by Prof. Steve Seitz, Prof. Ira Kemelmacher-Shlizerman,
-          and Prof. Brian Curless. My work focuses on reference-based super-resolution tasks.
-        </p>
-        <p class="muted" style="margin: 10px 0 0;">
-          I’m also an undergraduate researcher at the <a href="https://syslab.cs.washington.edu/" target="_blank" rel="noopener">UW Systems Lab</a>
-          under the mentorship of PhD Tapan Chugh, and advised by Arvind Krishnamurthy, working on debugging Web Agent
-          Gateway System (WAGS) failures.
-        </p>
-      </div>
-
-      <div class="card">
-        <h3>Personal / what I’m looking for</h3>
-        <p class="muted" style="margin: 0;">
-          I’m seeking opportunities to apply my technical skills to impactful work—especially in health, accessibility,
-          and tools that improve everyday life. I’m particularly motivated by projects that bridge research with
-          product.
-        </p>
-      </div>
+<section
+  id="resume"
+  class="snap-section snap-resume"
+  data-section="resume"
+>
+  <div class="snap-inner">
+    <div class="section-head reveal" style="--i: 0;">
+      <h2 class="section-title">Resume</h2>
+      <p class="section-sub muted2">Preview and download my resume.</p>
     </div>
-  </div>
-</section>
 
-<section id="resume" class="section">
-  <div class="section-inner">
-    <h2>Resume</h2>
-    <p class="muted">Preview and download my resume.</p>
-
-    <div class="resume-wrap">
+    <div class="resume-wrap reveal" style="--i: 1;">
       <iframe
         class="resume-frame"
         src="/_pages/Huy_Huynh_Resume.pdf"
@@ -149,9 +139,8 @@ layout: portfolio
       ></iframe>
     </div>
 
-    <div class="hero-actions" style="margin-top: 14px;">
+    <div class="resume-actions reveal" style="--i: 2;">
       <a class="btn btn-primary" href="/_pages/Huy_Huynh_Resume.pdf" download>Download Resume</a>
-      <a class="btn" href="#top">Back to top</a>
     </div>
   </div>
 </section>
