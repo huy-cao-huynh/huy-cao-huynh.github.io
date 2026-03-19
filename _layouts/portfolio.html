@@ -77,8 +77,10 @@
 
         const indicator = document.querySelector(".topnav-indicator");
         const header = document.querySelector(".topbar");
+        let currentActiveId = "biography";
 
         const setActive = (id) => {
+          currentActiveId = id;
           navLinks.forEach((a) => {
             const isActive = a.dataset.nav === id;
             a.setAttribute("aria-current", isActive ? "true" : "false");
@@ -90,7 +92,7 @@
             s.classList.toggle("is-active", isActive);
           });
 
-          if (indicator) {
+          if (indicator && header) {
             const active = navLinks.find((a) => a.dataset.nav === id);
             const rect = active ? active.getBoundingClientRect() : null;
             const headerRect = header.getBoundingClientRect();
@@ -103,8 +105,22 @@
           }
         };
 
-        // Initial indicator placement: set to Bio.
-        setActive("biography");
+        const updateIndicatorPosition = () => setActive(currentActiveId);
+
+        // Initial indicator placement: defer until layout is ready.
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            setActive("biography");
+          });
+        });
+
+        // Recalculate indicator position when layout is fully settled (fonts, splash, etc.).
+        window.addEventListener("load", updateIndicatorPosition);
+        if (document.fonts && document.fonts.ready) {
+          document.fonts.ready.then(updateIndicatorPosition);
+        }
+        // Re-run after splash animation completes (if shown), in case layout shifts.
+        setTimeout(updateIndicatorPosition, 2600);
 
         const io = new IntersectionObserver(
           (entries) => {

@@ -101,23 +101,25 @@ a:hover {
   align-items: center;
   justify-content: center;
   padding: 9px 14px;
-  border: 1px solid var(--border);
+  border: 1px solid rgba(148, 163, 184, 0.18);
   border-radius: 999px;
-  color: var(--muted2);
-  background: rgba(2, 6, 23, 0.18);
+  color: rgba(255, 255, 255, 0.9);
+  background: transparent;
   transition:
-    transform 150ms ease,
-    border-color 150ms ease,
-    background 150ms ease,
-    color 150ms ease;
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .tab:hover {
   text-decoration: none;
   transform: translateY(-1px);
-  border-color: rgba(34, 211, 238, 0.35);
+  border-color: rgba(67, 97, 238, 0.5);
   color: var(--text);
-  background: rgba(124, 58, 237, 0.11);
+  background: rgba(114, 9, 183, 0.12);
+  box-shadow: 0 0 20px rgba(114, 9, 183, 0.35), 0 0 40px rgba(67, 97, 238, 0.2);
 }
 
 .page-main {
@@ -192,10 +194,22 @@ a:hover {
 .chip {
   padding: 8px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(148, 163, 184, 0.2);
-  background: rgba(2, 6, 23, 0.2);
-  color: var(--muted2);
+  border: 1px solid rgba(148, 163, 184, 0.18);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 13px;
+  transition:
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.chip:hover {
+  border-color: rgba(67, 97, 238, 0.5);
+  background: rgba(114, 9, 183, 0.12);
+  color: var(--text);
+  box-shadow: 0 0 20px rgba(114, 9, 183, 0.35), 0 0 40px rgba(67, 97, 238, 0.2);
 }
 
 .hero-actions {
@@ -212,23 +226,40 @@ a:hover {
   gap: 10px;
   padding: 8px 16px;
   border-radius: var(--radius-pill);
-  border: 1px solid rgba(148, 163, 184, 0.22);
+  border: 1px solid rgba(148, 163, 184, 0.18);
   background: transparent;
-  color: var(--text);
+  color: rgba(255, 255, 255, 0.9);
   font-family: "Inter", sans-serif;
   font-weight: 400;
   font-size: 16px;
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .btn:hover {
   text-decoration: none;
+  transform: translateY(-1px);
   border-color: rgba(67, 97, 238, 0.5);
   background: rgba(114, 9, 183, 0.12);
+  color: var(--text);
+  box-shadow: 0 0 20px rgba(114, 9, 183, 0.35), 0 0 40px rgba(67, 97, 238, 0.2);
 }
 
 .btn-primary {
   border-color: rgba(114, 9, 183, 0.5);
   background: var(--pill-bg-active);
+  color: var(--text);
+}
+
+.btn-primary:hover {
+  border-color: rgba(67, 97, 238, 0.5);
+  background: linear-gradient(65.29deg, rgba(114, 9, 183, 0.28) 0.27%, rgba(67, 97, 238, 0.28) 99.7%);
+  box-shadow: 0 0 20px rgba(114, 9, 183, 0.35), 0 0 40px rgba(67, 97, 238, 0.2);
 }
 
 .section {
@@ -290,11 +321,11 @@ a:hover {
 
 .project-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(124, 58, 237, 0.35);
+  border-color: rgba(114, 9, 183, 0.5);
   background: linear-gradient(
     180deg,
-    rgba(124, 58, 237, 0.14),
-    rgba(34, 211, 238, 0.06)
+    rgba(114, 9, 183, 0.16),
+    rgba(67, 97, 238, 0.08)
   );
   text-decoration: none;
 }
@@ -713,8 +744,8 @@ body {
 
 .project-card:hover {
   transform: translateY(-3px);
-  border-color: rgba(124, 58, 237, 0.42);
-  background: linear-gradient(180deg, rgba(124, 58, 237, 0.16), rgba(34, 211, 238, 0.06));
+  border-color: rgba(114, 9, 183, 0.5);
+  background: linear-gradient(180deg, rgba(114, 9, 183, 0.16), rgba(67, 97, 238, 0.08));
 }
 
 .project-card h3 {
@@ -815,20 +846,29 @@ body {
   right: 18px;
   width: 40px;
   height: 40px;
-  border: none;
+  border: 1px solid rgba(148, 163, 184, 0.18);
   border-radius: var(--radius-pill);
-  background: rgba(148, 163, 184, 0.15);
-  color: var(--text);
+  background: transparent;
+  color: rgba(255, 255, 255, 0.9);
   cursor: pointer;
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s ease;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    color 180ms ease,
+    box-shadow 180ms ease;
 }
 
 .project-panel-close:hover {
-  background: rgba(114, 9, 183, 0.25);
+  transform: translateY(-1px);
+  border-color: rgba(67, 97, 238, 0.5);
+  background: rgba(114, 9, 183, 0.12);
+  color: var(--text);
+  box-shadow: 0 0 20px rgba(114, 9, 183, 0.35), 0 0 40px rgba(67, 97, 238, 0.2);
 }
 
 .project-panel-image {
