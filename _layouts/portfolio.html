@@ -18,9 +18,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ '/assets/css/portfolio.css' | relative_url }}" />
+    <script>
+      (function(){try{if(sessionStorage.getItem('splashShown'))document.documentElement.classList.add('splash-skip');}catch(e){}})();
+    </script>
   </head>
 
   <body>
+    <div class="splash" id="splash" aria-hidden="true">
+      <div class="splash-half splash-half--top"></div>
+      <div class="splash-half splash-half--bottom"></div>
+      <div class="splash-line-wrap" aria-hidden="true">
+        <svg class="splash-line-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+          <path class="splash-line-path" d="M 0,50 C 25,22 50,50 75,78 100,50" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
     <header class="topbar" aria-label="Section navigation">
       <div class="topbar-inner">
         <div class="brand" aria-label="Site title">
@@ -194,6 +206,42 @@
         document.addEventListener("keydown", (e) => {
           if (e.key === "Escape" && overlay.classList.contains("is-open")) closePanel();
         });
+      })();
+    </script>
+
+    <script>
+      (function () {
+        var splash = document.getElementById("splash");
+        if (!splash || document.documentElement.classList.contains("splash-skip")) return;
+
+        splash.removeAttribute("aria-hidden");
+        splash.classList.add("splash--active");
+
+        var linePath = splash.querySelector(".splash-line-path");
+        var halfTop = splash.querySelector(".splash-half--top");
+        var halfBottom = splash.querySelector(".splash-half--bottom");
+
+        var pathLen = linePath.getTotalLength ? linePath.getTotalLength() : 150;
+        linePath.style.strokeDasharray = pathLen + " " + pathLen;
+        linePath.style.strokeDashoffset = pathLen;
+
+        requestAnimationFrame(function () {
+          linePath.style.transition = "stroke-dashoffset 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)";
+          linePath.style.strokeDashoffset = "0";
+        });
+
+        setTimeout(function () {
+          halfTop.classList.add("is-revealed");
+          halfBottom.classList.add("is-revealed");
+        }, 580);
+
+        setTimeout(function () {
+          try { sessionStorage.setItem("splashShown", "1"); } catch (e) {}
+          splash.classList.add("splash--done");
+          setTimeout(function () {
+            splash.remove();
+          }, 450);
+        }, 1380);
       })();
     </script>
 
