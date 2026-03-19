@@ -914,7 +914,23 @@ html.splash-skip .splash {
   align-items: center;
   justify-content: center;
   color: rgba(255, 255, 255, 0.85);
-  overflow: visible;
+  overflow: hidden;
+  transition: opacity 0.2s ease;
+}
+
+.splash-line-wrap--hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.splash-line-track {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 300%;
+  height: 60%;
+  transform: translateY(-50%) translateX(3%);
+  will-change: transform;
 }
 
 .splash-line-svg {
@@ -924,7 +940,9 @@ html.splash-skip .splash {
 
 .splash-half {
   position: absolute;
-  inset: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
   background: #000;
   transform: translateY(0);
   transition: transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -932,12 +950,14 @@ html.splash-skip .splash {
 }
 
 .splash-half--top {
-  clip-path: polygon(0 0, 100% 0, 100% 50%, 75% 65%, 50% 50%, 25% 35%, 0 50%, 0 0);
+  top: 0;
+  height: 50%;
   transform-origin: center top;
 }
 
 .splash-half--bottom {
-  clip-path: polygon(0 50%, 25% 35%, 50% 50%, 75% 65%, 100% 50%, 100% 100%, 0 100%, 0 50%);
+  top: 50%;
+  height: 50%;
   transform-origin: center bottom;
 }
 
@@ -947,10 +967,5 @@ html.splash-skip .splash {
 
 .splash-half--bottom.is-revealed {
   transform: translateY(100%);
-}
-
-.splash--done .splash-line-wrap {
-  opacity: 0;
-  transition: opacity 0.35s ease;
 }
 

@@ -28,9 +28,11 @@
       <div class="splash-half splash-half--top"></div>
       <div class="splash-half splash-half--bottom"></div>
       <div class="splash-line-wrap" aria-hidden="true">
-        <svg class="splash-line-svg" viewBox="-5 0 110 100" preserveAspectRatio="none">
-          <path class="splash-line-path" d="M -2,50 C 22,30 48,70 50,50 C 52,30 78,70 102,50" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
-        </svg>
+        <div class="splash-line-track">
+          <svg class="splash-line-svg" viewBox="0 0 300 100" preserveAspectRatio="none">
+            <path class="splash-line-path" d="M 0,50 C 50,25 100,75 150,50 C 200,25 250,75 300,50" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+          </svg>
+        </div>
       </div>
     </div>
     <header class="topbar" aria-label="Section navigation">
@@ -217,20 +219,18 @@
         splash.removeAttribute("aria-hidden");
         splash.classList.add("splash--active");
 
-        var linePath = splash.querySelector(".splash-line-path");
+        var lineWrap = splash.querySelector(".splash-line-wrap");
+        var lineTrack = splash.querySelector(".splash-line-track");
         var halfTop = splash.querySelector(".splash-half--top");
         var halfBottom = splash.querySelector(".splash-half--bottom");
 
-        var pathLen = linePath.getTotalLength ? linePath.getTotalLength() : 150;
-        linePath.style.strokeDasharray = pathLen + " " + pathLen;
-        linePath.style.strokeDashoffset = pathLen;
-
         requestAnimationFrame(function () {
-          linePath.style.transition = "stroke-dashoffset 0.9s cubic-bezier(0.2, 0.8, 0.2, 1)";
-          linePath.style.strokeDashoffset = "0";
+          lineTrack.style.transition = "transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1)";
+          lineTrack.style.transform = "translateY(-50%) translateX(-69%)";
         });
 
         setTimeout(function () {
+          lineWrap.classList.add("splash-line-wrap--hide");
           halfTop.classList.add("is-revealed");
           halfBottom.classList.add("is-revealed");
         }, 900);
