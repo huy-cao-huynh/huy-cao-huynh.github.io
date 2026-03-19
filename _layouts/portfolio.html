@@ -28,8 +28,8 @@
       <div class="splash-half splash-half--top"></div>
       <div class="splash-half splash-half--bottom"></div>
       <div class="splash-line-wrap" aria-hidden="true">
-        <svg class="splash-line-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-          <path class="splash-line-path" d="M 0,50 C 25,22 50,50 75,78 100,50" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
+        <svg class="splash-line-svg" viewBox="-5 0 110 100" preserveAspectRatio="none">
+          <path class="splash-line-path" d="M -2,50 C 22,30 48,70 50,50 C 52,30 78,70 102,50" fill="none" stroke="currentColor" stroke-width="0.8" stroke-linecap="round"/>
         </svg>
       </div>
     </div>
@@ -226,22 +226,22 @@
         linePath.style.strokeDashoffset = pathLen;
 
         requestAnimationFrame(function () {
-          linePath.style.transition = "stroke-dashoffset 0.55s cubic-bezier(0.2, 0.8, 0.2, 1)";
+          linePath.style.transition = "stroke-dashoffset 0.9s cubic-bezier(0.2, 0.8, 0.2, 1)";
           linePath.style.strokeDashoffset = "0";
         });
 
         setTimeout(function () {
           halfTop.classList.add("is-revealed");
           halfBottom.classList.add("is-revealed");
-        }, 580);
+        }, 900);
 
         setTimeout(function () {
           try { sessionStorage.setItem("splashShown", "1"); } catch (e) {}
           splash.classList.add("splash--done");
           setTimeout(function () {
             splash.remove();
-          }, 450);
-        }, 1380);
+          }, 400);
+        }, 2000);
       })();
     </script>
 
