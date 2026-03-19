@@ -108,6 +108,7 @@ layout: portfolio
         <h3>{{ project.title }}</h3>
         <p>{{ project.short_desc }}</p>
         <p class="project-sub">{{ project.sub_desc }}</p>
+        <span class="project-card-cta">Click here to see more</span>
       </button>
       {% endfor %}
     </div>
