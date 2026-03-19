@@ -108,6 +108,7 @@
         const updateIndicatorPosition = () => setActive(currentActiveId);
 
         // Initial indicator placement: defer until layout is ready.
+        // Initial indicator placement: defer until layout is ready.
         requestAnimationFrame(function () {
           requestAnimationFrame(function () {
             setActive("biography");
@@ -119,8 +120,6 @@
         if (document.fonts && document.fonts.ready) {
           document.fonts.ready.then(updateIndicatorPosition);
         }
-        // Re-run after splash animation completes (if shown), in case layout shifts.
-        setTimeout(updateIndicatorPosition, 2600);
 
         const io = new IntersectionObserver(
           (entries) => {
@@ -242,7 +241,10 @@
 
         requestAnimationFrame(function () {
           lineTrack.style.transition = "transform 0.9s cubic-bezier(0.2, 0.8, 0.2, 1)";
-          lineTrack.style.transform = "translateY(-50%) translateX(-64%)";
+          lineTrack.style.transform = "translateY(-50%) translateX(3%)";
+          requestAnimationFrame(function () {
+            lineTrack.style.transform = "translateY(-50%) translateX(-64%)";
+          });
         });
 
         setTimeout(function () {
