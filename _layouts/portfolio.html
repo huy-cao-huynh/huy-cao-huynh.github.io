@@ -196,6 +196,31 @@
         });
       })();
     </script>
+
+    <script>
+      (function () {
+        const emailLink = document.querySelector('a.bio-link[href^="mailto:"]');
+        if (!emailLink) return;
+
+        emailLink.addEventListener("click", function (e) {
+          e.preventDefault();
+          const email = this.getAttribute("href").replace(/^mailto:/i, "").trim();
+
+          navigator.clipboard.writeText(email).then(
+            () => {
+              const originalText = this.textContent;
+              this.textContent = "Copied!";
+              setTimeout(() => {
+                this.textContent = originalText;
+              }, 1500);
+            },
+            () => {
+              window.location.href = "mailto:" + email;
+            }
+          );
+        });
+      })();
+    </script>
   </body>
 </html>
 
