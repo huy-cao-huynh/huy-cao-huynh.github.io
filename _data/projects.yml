@@ -1,0 +1,43 @@
+- id: lora-tts
+  title: LoRA-TTS
+  short_desc: Text-to-speech pipeline fine-tuned for Taiwanese-Mandarin accents.
+  sub_desc: Built around LoRA for efficient dialect adaptation, focusing on quality while reducing compute vs full fine-tuning.
+  image: /images/projects/lora-tts.png
+  github: https://github.com/huy-cao-huynh/Lora-TTS-Efficient-Dialect-Adaptation
+  demo: null
+  details: |
+    LoRA-TTS is a text-to-speech pipeline that uses Low-Rank Adaptation (LoRA) to fine-tune models for Taiwanese-Mandarin accents. The approach significantly reduces compute compared to full model fine-tuning while maintaining high audio quality. Key features include efficient parameter updates, dialect-specific adaptation, and a streamlined inference pipeline.
+  tech: LoRA, PyTorch, TTS, Taiwanese-Mandarin
+
+- id: ultrazoom
+  title: UltraZoom
+  short_desc: Multidiffusion transformer models for super-resolution text-to-image tasks.
+  sub_desc: Focused on super-resolution generation—turning low-res images into higher-fidelity outputs using multidiffusion transformers.
+  image: /images/projects/ultrazoom.png
+  github: null
+  demo: https://ultra-zoom.github.io/
+  details: |
+    UltraZoom leverages multidiffusion transformer architectures to perform super-resolution on text-to-image outputs. The project transforms low-resolution generated images into higher-fidelity results, bridging the gap between generation quality and resolution requirements. Part of ongoing research in diffusion-based image enhancement.
+  tech: Multidiffusion, Transformers, Super-Resolution, PyTorch
+
+- id: vistumor
+  title: VisTumor
+  short_desc: Deep learning pipeline for cancer detection in histopathology images.
+  sub_desc: Emphasizes model interpretability via Grad-CAM++ and saliency maps, alongside classification performance.
+  image: /images/projects/vistumor.png
+  github: https://github.com/huy-cao-huynh/VisTumor
+  demo: null
+  details: |
+    VisTumor is a deep learning pipeline designed for cancer detection in histopathology images. The system incorporates Grad-CAM++ and saliency mapping for interpretability, allowing clinicians to understand model decisions. The pipeline addresses both classification accuracy and the critical need for explainable AI in medical imaging.
+  tech: Deep Learning, Grad-CAM++, PyTorch, Medical Imaging
+
+- id: chess-engine
+  title: Java Chess Engine
+  short_desc: Mini-Max + Alpha-Beta pruning chess engine for move selection.
+  sub_desc: Implements classic search with Alpha-Beta pruning to efficiently evaluate board states and select strong moves.
+  image: /images/projects/chess-engine.png
+  github: https://github.com/huy-cao-huynh/MockFish
+  demo: null
+  details: |
+    A chess engine implemented in Java using the classic Mini-Max algorithm with Alpha-Beta pruning for efficient game tree search. The engine evaluates board states and selects strong moves, demonstrating fundamental concepts in game theory and search algorithms. Built as a systems-focused project.
+  tech: Java, Mini-Max, Alpha-Beta Pruning, Game AI

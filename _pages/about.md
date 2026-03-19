@@ -49,13 +49,13 @@ layout: portfolio
         <div class="bio-block">
           <h2 class="bio-h2">Research</h2>
           <p class="bio-p muted2">
-            I’m an undergraduate researcher at the
+            I'm an undergraduate researcher at the
             <a href="https://grail.cs.washington.edu/" target="_blank" rel="noopener">GRAIL Lab</a>
             under the mentorship of PhD Jingwei Ma, and advised by Prof. Steve Seitz, Prof. Ira Kemelmacher-Shlizerman,
             and Prof. Brian Curless. My work focuses on reference-based super-resolution tasks.
           </p>
           <p class="bio-p muted2">
-            I’m also an undergraduate researcher at the
+            I'm also an undergraduate researcher at the
             <a href="https://syslab.cs.washington.edu/" target="_blank" rel="noopener">UW Systems Lab</a>
             under the mentorship of PhD Tapan Chugh, and advised by Arvind Krishnamurthy, working on debugging Web Agent
             Gateway System (WAGS) failures.
@@ -63,10 +63,10 @@ layout: portfolio
         </div>
 
         <div class="bio-block">
-          <h2 class="bio-h2">Personal / what I’m looking for</h2>
+          <h2 class="bio-h2">Personal / what I'm looking for</h2>
           <p class="bio-p muted2">
-            I’m seeking opportunities to apply my technical skills to impactful work—especially in health, accessibility,
-            and tools that improve everyday life. I’m particularly motivated by projects that bridge research with
+            I'm seeking opportunities to apply my technical skills to impactful work—especially in health, accessibility,
+            and tools that improve everyday life. I'm particularly motivated by projects that bridge research with
             product.
           </p>
         </div>
@@ -89,68 +89,27 @@ layout: portfolio
     </div>
 
     <div class="projects-grid">
-      <a
+      {% for project in site.data.projects %}
+      <button
+        type="button"
         class="project-card reveal"
-        style="--i: 1;"
-        href="https://github.com/huy-cao-huynh/Lora-TTS-Efficient-Dialect-Adaptation"
-        target="_blank"
-        rel="noopener"
+        style="--i: {{ forloop.index }};"
+        data-project-id="{{ project.id }}"
+        data-project-title="{{ project.title }}"
+        data-project-short="{{ project.short_desc }}"
+        data-project-sub="{{ project.sub_desc }}"
+        data-project-image="{{ project.image }}"
+        data-project-github="{{ project.github }}"
+        data-project-demo="{{ project.demo }}"
+        data-project-details="{{ project.details | strip_newlines | escape }}"
+        data-project-tech="{{ project.tech }}"
+        aria-label="View details for {{ project.title }}"
       >
-        <h3>LoRA-TTS</h3>
-        <p>Text-to-speech pipeline fine-tuned for Taiwanese-Mandarin accents.</p>
-        <p class="project-sub">
-          Built around <span class="hl-accent2">LoRA</span> for efficient dialect adaptation, focusing on quality while reducing
-          compute vs full fine-tuning.
-        </p>
-      </a>
-
-      <a
-        class="project-card reveal"
-        style="--i: 2;"
-        href="https://ultra-zoom.github.io/"
-        target="_blank"
-        rel="noopener"
-      >
-        <h3>UltraZoom</h3>
-        <p>Multidiffusion transformer models for super-resolution text-to-image tasks.</p>
-        <p class="project-sub">
-          Focused on <span class="hl-accent2">super-resolution</span> generation—turning low-res images into higher-fidelity
-          outputs using multidiffusion transformers.
-        </p>
-      </a>
-
-      <a
-        class="project-card reveal"
-        style="--i: 3;"
-        href="https://github.com/huy-cao-huynh/VisTumor"
-        target="_blank"
-        rel="noopener"
-      >
-        <h3>VisTumor</h3>
-        <p>
-          Deep learning pipeline for cancer detection in histopathology images, with Grad-CAM++ and saliency
-          mapping for interpretability.
-        </p>
-        <p class="project-sub">
-          Emphasizes model interpretability via <span class="hl-accent2">Grad-CAM++</span> and saliency maps, alongside
-          classification performance.
-        </p>
-      </a>
-
-      <a
-        class="project-card reveal"
-        style="--i: 4;"
-        href="https://github.com/huy-cao-huynh/MockFish"
-        target="_blank"
-        rel="noopener"
-      >
-        <h3>Java Chess Engine</h3>
-        <p>Mini-Max + Alpha-Beta pruning chess engine for move selection.</p>
-        <p class="project-sub">
-          Implements classic search with <span class="hl-accent2">Alpha-Beta</span> pruning to efficiently evaluate board states
-          and select strong moves.
-        </p>
-      </a>
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.short_desc }}</p>
+        <p class="project-sub">{{ project.sub_desc }}</p>
+      </button>
+      {% endfor %}
     </div>
   </div>
 </section>

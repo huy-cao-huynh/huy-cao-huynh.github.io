@@ -1,22 +1,23 @@
-/* Minimal dark portfolio theme (standalone; does not rely on template includes). */
+/* Portfolio theme - aligned with Figma design (Poppins, Inter, gradient, pill buttons). */
 
 :root {
   --bg0: #05060a;
-  --bg1: #070b18;
+  --bg1: #1e1e1e;
   --card: rgba(15, 23, 42, 0.72);
   --card2: rgba(7, 11, 24, 0.72);
   --border: rgba(148, 163, 184, 0.18);
-  --text: #e5e7eb;
+  --text: #ffffff;
   --muted: #9ca3af;
-  --muted2: #94a3b8;
+  --muted2: #f5f5f5;
 
-  --accent: #140152; /* purple */
-  --accent2: #0d00a4; /* cyan */
-  --accent3: #22007c; /* indigo */
+  --accent: #7209b7;
+  --accent2: #4361ee;
+  --accent3: #6db3bf;
 
   --shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
-  --radius: 18px;
-  --radius2: 26px;
+  --radius: 8px;
+  --radius2: 18px;
+  --radius-pill: 999px;
 }
 
 html {
@@ -26,13 +27,14 @@ html {
 body {
   margin: 0;
   color: var(--text);
-  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-  background:
-    radial-gradient(1200px 700px at 10% -10%, rgba(124, 58, 237, 0.35), transparent 50%),
-    radial-gradient(900px 600px at 90% 0%, rgba(34, 211, 238, 0.28), transparent 45%),
-    radial-gradient(700px 500px at 70% 120%, rgba(99, 102, 241, 0.22), transparent 45%),
-    linear-gradient(180deg, var(--bg0), var(--bg1));
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  background: linear-gradient(
+    59.44deg,
+    rgba(114, 9, 183, 0.56) 2.5%,
+    rgba(30, 30, 30, 0) 50%,
+    rgba(67, 97, 238, 0.56) 97.5%
+  );
+  background-color: #0a0a0f;
   min-height: 100vh;
 }
 
@@ -80,10 +82,11 @@ a:hover {
 }
 
 .brand-name {
-  font-weight: 720;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
   letter-spacing: 0.2px;
   color: var(--text);
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .tabs {
@@ -207,23 +210,25 @@ a:hover {
   align-items: center;
   justify-content: center;
   gap: 10px;
-  padding: 11px 14px;
-  border-radius: 14px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
   border: 1px solid rgba(148, 163, 184, 0.22);
-  background: rgba(2, 6, 23, 0.25);
+  background: transparent;
   color: var(--text);
-  font-weight: 620;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .btn:hover {
   text-decoration: none;
-  border-color: rgba(34, 211, 238, 0.35);
-  background: rgba(34, 211, 238, 0.08);
+  border-color: rgba(67, 97, 238, 0.5);
+  background: rgba(114, 9, 183, 0.12);
 }
 
 .btn-primary {
-  border-color: rgba(124, 58, 237, 0.35);
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.28), rgba(34, 211, 238, 0.12));
+  border-color: rgba(114, 9, 183, 0.5);
+  background: var(--pill-bg-active);
 }
 
 .section {
@@ -352,26 +357,11 @@ a:hover {
 }
 
 /* ------------------------------
-   Fixup variables + modern layout
+   Layout + Figma design tokens
    ------------------------------ */
 :root {
-  --bg0: #05060a;
-  --bg1: #070b18;
-  --card: rgba(15, 23, 42, 0.72);
-  --card2: rgba(7, 11, 24, 0.72);
-  --border: rgba(148, 163, 184, 0.18);
-  --text: #e5e7eb;
-  --muted: #9ca3af;
-  --muted2: #94a3b8;
   --header-h: 72px;
-
-  --accent: #7c3aed;
-  --accent2: #22d3ee;
-  --accent3: #6366f1;
-
-  --shadow: 0 18px 45px rgba(0, 0, 0, 0.45);
-  --radius: 18px;
-  --radius2: 26px;
+  --pill-bg-active: linear-gradient(65.29deg, rgba(114, 9, 183, 0.2) 0.27%, rgba(67, 97, 238, 0.2) 99.7%);
 }
 
 html {
@@ -426,12 +416,14 @@ body {
 .topnav-link {
   position: relative;
   z-index: 1;
-  padding: 10px 14px;
-  border-radius: 999px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
   border: 1px solid rgba(148, 163, 184, 0.18);
-  color: rgba(148, 163, 184, 0.95);
+  color: rgba(255, 255, 255, 0.9);
   text-decoration: none;
-  font-weight: 650;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   letter-spacing: 0.1px;
   transition:
     background 180ms ease,
@@ -442,15 +434,15 @@ body {
 
 .topnav-link:hover {
   transform: translateY(-1px);
-  border-color: rgba(34, 211, 238, 0.35);
-  background: rgba(124, 58, 237, 0.12);
+  border-color: rgba(67, 97, 238, 0.5);
+  background: rgba(114, 9, 183, 0.12);
   color: var(--text);
 }
 
 .topnav-link[data-active="true"] {
-  border-color: rgba(124, 58, 237, 0.45);
+  border-color: rgba(114, 9, 183, 0.5);
   color: var(--text);
-  background: rgba(124, 58, 237, 0.14);
+  background: var(--pill-bg-active);
 }
 
 .topnav-indicator {
@@ -460,10 +452,10 @@ body {
   height: 36px;
   width: 80px;
   box-sizing: border-box;
-  border-radius: 999px;
+  border-radius: var(--radius-pill);
   transform: translateX(0) translateY(-50%);
-  background: linear-gradient(135deg, rgba(124, 58, 237, 0.22), rgba(34, 211, 238, 0.12));
-  border: 1px solid rgba(124, 58, 237, 0.35);
+  background: var(--pill-bg-active);
+  border: 1px solid rgba(114, 9, 183, 0.5);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
   transition:
     transform 240ms cubic-bezier(0.2, 0.8, 0.2, 1),
@@ -554,15 +546,20 @@ body {
 
 .bio-name {
   margin: 0 0 10px;
-  font-size: clamp(36px, 5.2vw, 52px);
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(42px, 5.5vw, 64px);
+  font-weight: 400;
   line-height: 1.03;
-  letter-spacing: -0.9px;
+  letter-spacing: -0.5px;
+  color: var(--text);
 }
 
 .bio-lead {
   margin: 0 0 18px;
-  line-height: 1.65;
-  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.95);
 }
 
 .bio-links {
@@ -576,13 +573,15 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 10px 14px;
-  border-radius: 999px;
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
   border: 1px solid rgba(148, 163, 184, 0.18);
-  color: rgba(148, 163, 184, 0.95);
-  background: rgba(2, 6, 23, 0.18);
+  color: rgba(255, 255, 255, 0.9);
+  background: transparent;
   text-decoration: none;
-  font-weight: 650;
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
   letter-spacing: 0.1px;
   transition:
     transform 180ms ease,
@@ -593,10 +592,15 @@ body {
 
 .bio-link:hover {
   transform: translateY(-1px);
-  border-color: rgba(124, 58, 237, 0.45);
-  background: rgba(124, 58, 237, 0.14);
+  border-color: rgba(67, 97, 238, 0.5);
+  background: rgba(114, 9, 183, 0.12);
   color: var(--text);
   text-decoration: none;
+}
+
+.bio-link:first-child {
+  background: var(--pill-bg-active);
+  color: var(--muted2);
 }
 
 .muted2 {
@@ -609,15 +613,19 @@ body {
 
 .bio-h2 {
   margin: 0 0 8px;
-  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 600;
   letter-spacing: -0.2px;
-  color: var(--accent3);
+  color: var(--text);
 }
 
 .bio-p {
   margin: 0 0 10px;
-  line-height: 1.75;
-  font-size: 15px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 /* Projects section */
@@ -627,9 +635,11 @@ body {
 
 .section-title {
   margin: 0 0 10px;
+  font-family: "Poppins", sans-serif;
   font-size: 28px;
+  font-weight: 600;
   letter-spacing: -0.4px;
-  color: var(--accent2);
+  color: var(--text);
 }
 
 .section-sub {
@@ -654,6 +664,16 @@ body {
     transform 180ms ease,
     border-color 180ms ease,
     background 180ms ease;
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+  font-family: inherit;
+  color: inherit;
+}
+
+.project-card:focus {
+  outline: 2px solid rgba(114, 9, 183, 0.5);
+  outline-offset: 2px;
 }
 
 /* Projects: bigger cards + more readable copy */
@@ -748,5 +768,127 @@ body {
   .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+}
+
+/* ------------------------------
+   Project side panel
+   ------------------------------ */
+.project-panel-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.project-panel-overlay.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.project-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  max-width: 480px;
+  height: 100%;
+  z-index: 201;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.98), rgba(7, 11, 24, 0.98));
+  border-left: 1px solid rgba(148, 163, 184, 0.2);
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.4);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+  overflow-y: auto;
+}
+
+.project-panel-overlay.is-open .project-panel {
+  transform: translateX(0);
+}
+
+.project-panel-inner {
+  padding: 28px 24px 40px;
+}
+
+.project-panel-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: var(--radius-pill);
+  background: rgba(148, 163, 184, 0.15);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.project-panel-close:hover {
+  background: rgba(114, 9, 183, 0.25);
+}
+
+.project-panel-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius2);
+  object-fit: cover;
+  background: linear-gradient(135deg, rgba(114, 9, 183, 0.2), rgba(67, 97, 238, 0.15));
+  margin-bottom: 20px;
+}
+
+.project-panel-image-placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: var(--radius2);
+  background: linear-gradient(135deg, rgba(114, 9, 183, 0.25), rgba(67, 97, 238, 0.2));
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+}
+
+.project-panel h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  font-weight: 600;
+  margin: 0 0 12px;
+  color: var(--text);
+}
+
+.project-panel-details {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 20px;
+  white-space: pre-line;
+}
+
+.project-panel-tech {
+  font-family: "Inter", sans-serif;
+  font-size: 13px;
+  color: var(--accent3);
+  margin-bottom: 24px;
+}
+
+.project-panel-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-panel-actions .btn {
+  padding: 10px 18px;
 }
 
