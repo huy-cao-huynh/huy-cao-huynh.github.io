@@ -18,14 +18,26 @@ I'm also an undergraduate researcher at the [UW Systems Lab](https://syslab.cs.w
 
 ## Projects
 
-**[UltraZoom](https://ultra-zoom.github.io/)**  
-Multidiffusion transformer models for super-resolution text-to-image generation — turning low-res images into higher-fidelity outputs using multidiffusion transformers.
+<div style="display: flex; align-items: flex-start; margin-bottom: 24px;">
+  <img src="/images/ultrazoom_thumbnail.gif" style="width: 180px; flex-shrink: 0; margin-right: 20px; border-radius: 4px;" />
+  <div>
+    <b>UltraZoom: Generating Gigapixel Images from Regular Photos</b><br>
+    <b>Jingwei Ma</b>, Vivek Jayaram, Brian Curless, Ira Kemelmacher-Shlizerman, Steven M. Seitz<br>
+    SIGGRAPH Asia, 2025 | <a href="https://ultra-zoom.github.io/">Project Page</a> | <a href="https://arxiv.org/abs/2506.13756">arXiv</a> | <a href="https://arxiv.org/pdf/2506.13756">Paper</a> | <a href="https://youtu.be/yIlnyoIxNPI">Video</a> | <a href="https://github.com/ultra-zoom/ultra-zoom.github.io">Code</a>
+  </div>
+</div>
 
-**[LoRA-TTS](https://github.com/huy-cao-huynh/Lora-TTS-Efficient-Dialect-Adaptation)**  
-Text-to-speech pipeline fine-tuned for Taiwanese-Mandarin accents using LoRA for efficient dialect adaptation, focusing on quality while reducing compute versus full fine-tuning.
+<div style="margin-bottom: 24px;">
+  <b><a href="https://github.com/huy-cao-huynh/Lora-TTS-Efficient-Dialect-Adaptation">LoRA-TTS</a></b><br>
+  Text-to-speech pipeline fine-tuned for Taiwanese-Mandarin accents using LoRA for efficient dialect adaptation, focusing on quality while reducing compute versus full fine-tuning.
+</div>
 
-**[VisTumor](https://github.com/huy-cao-huynh/VisTumor)**  
-Deep learning pipeline for cancer detection in histopathology images with Grad-CAM++ and saliency mapping for interpretability.
+<div style="margin-bottom: 24px;">
+  <b><a href="https://github.com/huy-cao-huynh/VisTumor">VisTumor</a></b><br>
+  Deep learning pipeline for cancer detection in histopathology images with Grad-CAM++ and saliency mapping for interpretability.
+</div>
 
-**[Java Chess Engine (MockFish)](https://github.com/huy-cao-huynh/MockFish)**  
-Mini-Max with Alpha-Beta pruning chess engine. Implements classic search to efficiently evaluate board states and select strong moves.
+<div style="margin-bottom: 24px;">
+  <b><a href="https://github.com/huy-cao-huynh/MockFish">Java Chess Engine (MockFish)</a></b><br>
+  Mini-Max with Alpha-Beta pruning chess engine. Implements classic search to efficiently evaluate board states and select strong moves.
+</div>
