@@ -16,19 +16,53 @@ I'm currently a researcher at the [UW Graphics and Imaging Laboratory](https://g
 
 I'm also an undergraduate researcher at the [UW Systems Lab](https://syslab.cs.washington.edu/) under the mentorship of PhD student [Tapan Chugh](https://chughtapan.github.io/), and advised by [Arvind Krishnamurthy](https://sites.google.com/cs.washington.edu/arvind). My work focuses on defining and identifying web agent system failures using LLM-as-a-judge.
 
+## Publications
+
+<div style="display: flex; align-items: flex-start; margin-bottom: 24px;">
+  <div style="width: 180px; height: 120px; flex-shrink: 0; margin-right: 20px; border-radius: 4px; background-color: #d0d0d0;"></div>
+  <div>
+    <b>A Structure-Preserving Generative Framework for Microscopic Scale Super-Resolution</b><br>
+    Anonymous Authors<br>
+    Under Review, SIGGRAPH Asia | [Links available post-review]
+  </div>
+</div>
+
+<div style="display: flex; align-items: flex-start; margin-bottom: 24px;">
+  <div style="width: 180px; height: 120px; flex-shrink: 0; margin-right: 20px; border-radius: 4px; background-color: #d0d0d0;"></div>
+  <div>
+    <b>Reference-based super-resolution for garment product imagery using a single pre-trained model.</b><br>
+    Anonymous Authors<br>
+    Under Review, European Conference on Computer Vision (ECCV) | [Links available post-review]
+  </div>
+</div>
+
 ## Projects
 
-<div style="margin-bottom: 24px;">
-  <b><a href="https://github.com/huy-cao-huynh/Lora-TTS-Efficient-Dialect-Adaptation">LoRA-TTS</a></b><br>
-  Text-to-speech pipeline fine-tuned for Taiwanese-Mandarin accents using LoRA for efficient dialect adaptation, focusing on quality while reducing compute versus full fine-tuning.
+<div style="display: flex; align-items: flex-start; margin-bottom: 24px;">
+  <div style="width: 180px; height: 120px; flex-shrink: 0; margin-right: 20px; border-radius: 4px; background-color: #d0d0d0;"></div>
+  <div>
+    <b>LoRA-TTS</b><br>
+    Text-to-speech pipeline fine-tuned for Taiwanese-Mandarin accents using LoRA for efficient dialect adaptation, focusing on quality while reducing compute versus full fine-tuning.<br>
+    <a href="https://github.com/huy-cao-huynh/Lora-TTS-Efficient-Dialect-Adaptation" target="_blank" class="btn btn--inverse btn--small"><i class="fab fa-fw fa-github"></i> Code</a>
+    <a href="/_pages/lora-tts.pdf" target="_blank" class="btn btn--inverse btn--small"><i class="fas fa-fw fa-file-pdf"></i> Paper</a>
+  </div>
 </div>
 
-<div style="margin-bottom: 24px;">
-  <b><a href="https://github.com/huy-cao-huynh/VisTumor">VisTumor</a></b><br>
-  Deep learning pipeline for cancer detection in histopathology images with Grad-CAM++ and saliency mapping for interpretability.
+<div style="display: flex; align-items: flex-start; margin-bottom: 24px;">
+  <img src="/images/vistumor/ResNet_TP.png" style="width: 180px; flex-shrink: 0; margin-right: 20px; border-radius: 4px;" />
+  <div>
+    <b>VisTumor</b><br>
+    Deep learning pipeline for cancer detection in histopathology images with Grad-CAM++ and saliency mapping for interpretability.<br>
+    <a href="https://github.com/huy-cao-huynh/VisTumor" target="_blank" class="btn btn--inverse btn--small"><i class="fab fa-fw fa-github"></i> Code</a>
+    <a href="/_pages/vistumor.pdf" target="_blank" class="btn btn--inverse btn--small"><i class="fas fa-fw fa-file-pdf"></i> Paper</a>
+  </div>
 </div>
 
-<div style="margin-bottom: 24px;">
-  <b><a href="https://github.com/huy-cao-huynh/MockFish">Java Chess Engine (MockFish)</a></b><br>
-  Mini-Max with Alpha-Beta pruning chess engine. Implements classic search to efficiently evaluate board states and select strong moves.
+<div style="display: flex; align-items: flex-start; margin-bottom: 24px;">
+  <img src="/images/mockfish/MockFish.gif" style="width: 180px; flex-shrink: 0; margin-right: 20px; border-radius: 4px;" />
+  <div>
+    <b>Java Chess Engine (MockFish)</b><br>
+    Mini-Max with Alpha-Beta pruning chess engine. Implements classic search to efficiently evaluate board states and select strong moves.<br>
+    <a href="https://github.com/huy-cao-huynh/MockFish" target="_blank" class="btn btn--inverse btn--small"><i class="fab fa-fw fa-github"></i> Code</a>
+  </div>
 </div>
