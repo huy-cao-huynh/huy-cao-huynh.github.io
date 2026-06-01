@@ -19,7 +19,7 @@ I'm also an undergraduate researcher at the [UW Systems Lab](https://syslab.cs.w
 ## Publications
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 24px;">
-  <div style="width: 180px; height: 120px; flex-shrink: 0; margin-right: 20px; border-radius: 4px; background-color: #d0d0d0;"></div>
+  <div style="width: 180px; height: 120px; flex-shrink: 0; margin-right: 20px; border-radius: 4px; background-color: #d0d0d0; display: flex; align-items: center; justify-content: center;"><span style="font-size: 11px; color: #666; text-align: center; padding: 8px;">Preview available post-review</span></div>
   <div>
     <b>A Structure-Preserving Generative Framework for Microscopic Scale Super-Resolution</b><br>
     Anonymous Authors<br>
@@ -28,9 +28,9 @@ I'm also an undergraduate researcher at the [UW Systems Lab](https://syslab.cs.w
 </div>
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 24px;">
-  <div style="width: 180px; height: 120px; flex-shrink: 0; margin-right: 20px; border-radius: 4px; background-color: #d0d0d0;"></div>
+  <div style="width: 180px; height: 120px; flex-shrink: 0; margin-right: 20px; border-radius: 4px; background-color: #d0d0d0; display: flex; align-items: center; justify-content: center;"><span style="font-size: 11px; color: #666; text-align: center; padding: 8px;">Preview available post-review</span></div>
   <div>
-    <b>Reference-based super-resolution for garment product imagery using a single pre-trained model.</b><br>
+    <b>Reference-based super-resolution for garment product imagery.</b><br>
     Anonymous Authors<br>
     Under Review, European Conference on Computer Vision (ECCV) | [Links available post-review]
   </div>
@@ -39,7 +39,7 @@ I'm also an undergraduate researcher at the [UW Systems Lab](https://syslab.cs.w
 ## Projects
 
 <div style="display: flex; align-items: flex-start; margin-bottom: 24px;">
-  <div style="width: 180px; height: 120px; flex-shrink: 0; margin-right: 20px; border-radius: 4px; background-color: #d0d0d0;"></div>
+  <img src="/images/lora-tts/lora-tts-diagram.png" style="width: 180px; flex-shrink: 0; margin-right: 20px; border-radius: 4px;" />
   <div>
     <b>LoRA-TTS</b><br>
     Text-to-speech pipeline fine-tuned for Taiwanese-Mandarin accents using LoRA for efficient dialect adaptation, focusing on quality while reducing compute versus full fine-tuning.<br>
